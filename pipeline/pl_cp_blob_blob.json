@@ -1,0 +1,226 @@
+{
+	"name": "pl_cp_blob_blob",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EMPNO",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EMPNO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENAME",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "JOB",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "JOB",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MGR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HIREDATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HIREDATE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SAL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SAL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COMM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COMM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPTNO",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DEPTNO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UPDATED_DATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UPDATED_DATE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_blob_blob",
+						"type": "DatasetReference",
+						"parameters": {
+							"container_name": {
+								"value": "@pipeline().parameters.source_container",
+								"type": "Expression"
+							},
+							"directory_name": {
+								"value": "@pipeline().parameters.source_directory",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@pipeline().parameters.source_filename",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_blob_blob",
+						"type": "DatasetReference",
+						"parameters": {
+							"container_name": {
+								"value": "@pipeline().parameters.sink_container",
+								"type": "Expression"
+							},
+							"directory_name": {
+								"value": "@pipeline().parameters.sink_directory",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@pipeline().parameters.sink_filename",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"source_container": {
+				"type": "string"
+			},
+			"source_directory": {
+				"type": "string"
+			},
+			"source_filename": {
+				"type": "string"
+			},
+			"sink_container": {
+				"type": "string"
+			},
+			"sink_directory": {
+				"type": "string"
+			},
+			"sink_filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-02-09T23:13:08Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

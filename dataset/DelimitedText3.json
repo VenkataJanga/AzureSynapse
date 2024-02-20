@@ -1,0 +1,62 @@
+{
+	"name": "DelimitedText3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dtaga_new",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "emp_raw.txt",
+				"folderPath": "raw_data",
+				"container": "tcasdailycasesrawdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "EMPNO",
+				"type": "String"
+			},
+			{
+				"name": "ENAME",
+				"type": "String"
+			},
+			{
+				"name": "JOB",
+				"type": "String"
+			},
+			{
+				"name": "MGR",
+				"type": "String"
+			},
+			{
+				"name": "HIREDATE",
+				"type": "String"
+			},
+			{
+				"name": "SAL",
+				"type": "String"
+			},
+			{
+				"name": "COMM",
+				"type": "String"
+			},
+			{
+				"name": "DEPTNO",
+				"type": "String"
+			},
+			{
+				"name": "UPDATED_DATE",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

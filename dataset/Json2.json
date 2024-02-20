@@ -1,0 +1,52 @@
+{
+	"name": "Json2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dtaga_new",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "emp.json",
+				"folderPath": "raw_data",
+				"container": "jsoncontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"EMPNO": {
+					"type": "integer"
+				},
+				"ENAME": {
+					"type": "string"
+				},
+				"JOB": {
+					"type": "string"
+				},
+				"MGR": {
+					"type": "integer"
+				},
+				"HIREDATE": {
+					"type": "string"
+				},
+				"SAL": {
+					"type": "integer"
+				},
+				"COMM": {
+					"type": "integer"
+				},
+				"DEPTNO": {
+					"type": "integer"
+				},
+				"UPDATED_DATE": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

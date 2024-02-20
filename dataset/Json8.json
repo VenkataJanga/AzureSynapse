@@ -1,0 +1,34 @@
+{
+	"name": "Json8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dtag",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dept.json",
+				"folderPath": "raw_data",
+				"fileSystem": "jsoncontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Deptno": {
+					"type": "integer"
+				},
+				"Dname": {
+					"type": "string"
+				},
+				"Loc": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,73 @@
+{
+	"name": "DelimitedText6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dtaga_new",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "part-00000-54b0f939-db62-4d9c-8e22-7ddc1ab6db85-c000.csv",
+				"container": "empdeptcon"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "EMPNO",
+				"type": "String"
+			},
+			{
+				"name": "ENAME",
+				"type": "String"
+			},
+			{
+				"name": "JOB",
+				"type": "String"
+			},
+			{
+				"name": "MGR",
+				"type": "String"
+			},
+			{
+				"name": "HIREDATE",
+				"type": "String"
+			},
+			{
+				"name": "SAL",
+				"type": "String"
+			},
+			{
+				"name": "COMM",
+				"type": "String"
+			},
+			{
+				"name": "DEPTNO",
+				"type": "String"
+			},
+			{
+				"name": "UPDATED_DATE",
+				"type": "String"
+			},
+			{
+				"name": "Deptno",
+				"type": "String"
+			},
+			{
+				"name": "Dname",
+				"type": "String"
+			},
+			{
+				"name": "Loc",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

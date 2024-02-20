@@ -1,0 +1,54 @@
+{
+	"name": "DS_SQL_META",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azure_db",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "InputFile",
+				"type": "nvarchar"
+			},
+			{
+				"name": "InputContainer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "InputDirectory",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OutputFile",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OutputContainer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Outputdirectory",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SqlSchema",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SqlTable",
+				"type": "nvarchar"
+			},
+			{
+				"name": "flag",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "ellipsab",
+			"table": "IL_METADATA_TAB"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

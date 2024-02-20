@@ -1,0 +1,94 @@
+{
+	"name": "DS_METADATA_BLOB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dtag",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"InputContainer": {
+				"type": "string"
+			},
+			"InputDirectory": {
+				"type": "string"
+			},
+			"InputFile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().InputFile",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().InputDirectory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().InputContainer",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "EMPNO",
+				"type": "String"
+			},
+			{
+				"name": "ENAME",
+				"type": "String"
+			},
+			{
+				"name": "JOB",
+				"type": "String"
+			},
+			{
+				"name": "MGR",
+				"type": "String"
+			},
+			{
+				"name": "HIREDATE",
+				"type": "String"
+			},
+			{
+				"name": "SAL",
+				"type": "String"
+			},
+			{
+				"name": "COMM",
+				"type": "String"
+			},
+			{
+				"name": "DEPTNO",
+				"type": "String"
+			},
+			{
+				"name": "UPDATED_DATE",
+				"type": "String"
+			},
+			{
+				"name": "Deptno",
+				"type": "String"
+			},
+			{
+				"name": "Dname",
+				"type": "String"
+			},
+			{
+				"name": "Loc",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

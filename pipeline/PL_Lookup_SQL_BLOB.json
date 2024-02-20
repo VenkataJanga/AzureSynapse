@@ -1,0 +1,53 @@
+{
+	"name": "PL_Lookup_SQL_BLOB",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_Lookup_SQL",
+						"type": "DatasetReference",
+						"parameters": {
+							"schemaName": {
+								"value": "@pipeline().parameters.lookup_metadata_schema",
+								"type": "Expression"
+							},
+							"tableName": {
+								"value": "@pipeline().parameters.lookup_metadata_table",
+								"type": "Expression"
+							}
+						}
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"parameters": {
+			"lookup_metadata_schema": {
+				"type": "string"
+			},
+			"lookup_metadata_table": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-02-18T00:23:07Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

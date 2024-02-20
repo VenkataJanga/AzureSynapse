@@ -1,0 +1,58 @@
+{
+	"name": "DelimitedText12",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dtag",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "emp_dept.txt",
+				"folderPath": "ingested_raw_data",
+				"fileSystem": "targetcontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "type",
+				"type": "String"
+			},
+			{
+				"name": "name",
+				"type": "String"
+			},
+			{
+				"name": "ppu",
+				"type": "String"
+			},
+			{
+				"name": "batters_id",
+				"type": "String"
+			},
+			{
+				"name": "topping_id",
+				"type": "String"
+			},
+			{
+				"name": "batter_type",
+				"type": "String"
+			},
+			{
+				"name": "topping_type",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,67 @@
+{
+	"name": "Json4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dtaga_new",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "nest_sample.json",
+				"folderPath": "raw_data",
+				"container": "jsoncontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"case_number": {
+					"type": "string"
+				},
+				"rsa_provider_id": {
+					"type": "string"
+				},
+				"prv_old_mb_dealer_id": {
+					"type": "string"
+				},
+				"act_provider_contacted_id": {
+					"type": "string"
+				},
+				"prv_old_mb_dealer_id_cont": {
+					"type": "string"
+				},
+				"act_provider_contacted_name": {
+					"type": "string"
+				},
+				"act_response_type": {
+					"type": "string"
+				},
+				"act_sub_response_type": {
+					"type": "string"
+				},
+				"act_description": {
+					"type": "string"
+				},
+				"act_activity_creation_date": {
+					"type": "string"
+				},
+				"act_activity_creation_date_cet": {
+					"type": "string"
+				},
+				"tc_business_unit": {
+					"type": "string"
+				},
+				"created_date": {
+					"type": "string"
+				},
+				"created_date_cet": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
